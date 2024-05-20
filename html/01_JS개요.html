@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- html 5 버전-->
+<html lang="ko">
+  <!-- html 작성 시작 및 검색엔진 언어 설정-->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 언어 깨짐 방지-->
+    <title>01_JS 개요</title>
+  </head>
+  <body>
+    <h1>Script 언어란?</h1>
+    <pre>
+        기본 프로그램의 동작을 사용자의 요구에 맞게 수행되도록 만들어 주는 용도의 언어이다. 
+        JAVA 와는 달리, 코드를 컴파일(이진수로 번역) 하지 않고,
+        Interpreter(인터프리터. 한 줄씩 코드를 읽어서 해석하는 기능) 를 수행하여 코드를 바로 실행한다. 
+        
+            - 장점: 컴파일에 시간을 소모할 필요가 없다. 
+            - 단점: 프로그램 실행 속도가 자바에 비해 상대적으로 느리다. 
+    </pre>
+
+    <h1>javascript 코드 작성 방법</h1>
+    <ol>
+      <li>
+        브라우저 개발자 도구(F12) ▶ console 에 직접 작성한다.
+        <small>
+          * 콘솔이란, 웹 화면에서 직접 보면서 코드를 작성할 수 있는 공간이다.
+        </small>
+      </li>
+      <li>
+        HTML 내부에 script 태그를 이용하여 작성해보기
+        <br />
+        <button onclick="알림창보이기()">내부에 script 작성</button>
+        <script>
+          // javascript 는, 줄임말로 js 라고 표현한다.
+          // 한 줄 주석
+          /* 범위 주석*/
+          /* script 태그는, JS 코드를 작성할 수 있는 태그이다.*/
+
+          /*
+                java 에서 기능(method) 을 작성할 때
+                    public void 동작이름() {
+                        System.out.println("입력을 진행했습니다.");
+                    }
+
+                javascript 에서 기능(function) 을 작성할 때
+                    function 동작이름() {
+                        console.log: "사용자에게는 보이지 않지만, 개발자에게는 보이는 출력문"
+                        또는 
+                        alert: "사용자에게 보이는 출력문"
+                        을 이용해서 표현한다.
+                    }
+            */
+
+          // function: 함수, 기능
+          function 알림창보이기() {
+            // alert: 알림/경고 창.     // alert("보여주고자 하는 내용") 형식으로 작성해 준다.
+            alert("버튼이 클릭되었습니다.");
+          }
+        </script>
+      </li>
+    </ol>
+  </body>
+</html>

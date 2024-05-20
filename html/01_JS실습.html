@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- html 5 버전-->
+<html lang="kor">
+  <!-- html 작성 시작 및 검색엔진 언어 설정-->
+  <head>
+    <!-- meta title css script style link 등, 직접 보이지는 않지만 필요한 웹 설정을 하는 공간-->
+    <meta charset="utf-8" />
+    <!-- 언어 깨짐 방지-->
+    <title>테마 변경하기</title>
+  </head>
+  <body>
+    <h1>밝은 테마 / 어두운 테마로 변경해보기</h1>
+    <button onclick="lightMode()">라이트 모드</button>
+    <button onclick="darkMode()">다크 모드</button>
+    <script>
+      /* 
+        스크립트 또한 마찬가지로 head 와 body 내부에 작성해 주어도 되지만,
+        맨 위나 맨 아래에 모아두는 것이 좋다.
+
+        // 버튼을 클릭했을 때, body 에 있는 글자색과 배경색이 변경되게 만들어보기
+
+        // 함수(function) button 에서, onclick 옆에 작성한 기능명을 작성
+            function 기능명() {
+                기능을 클릭하거나 사용할 때 수행 할 동작들 작성
+            }
+      */
+
+    // body 태그는 html 안에서 존재하는 이름일 뿐, script 안에서 존재하는 이름이 아니다. 
+    const 바디 = document.querySelector("body"); /* body 태그 선택*/
+
+    /* 라이트 모드 버튼을 눌렀을 때, 실행될 기능 작성하기*/
+    function lightMode() {
+        // body 태그 안에 있는 style 변경하기
+        
+        // style 태그 안의 글자색을 변경하는 color 설정하기
+        // 태그 안으로 무언가를 작성할 때는 .을 작성해 준다. 
+        바디.style.color="black"; // 글자색을 검은색으로 변경
+
+        // style 태그 안의 배경색을 변경하는 backgroundcolor 설정
+        바디.style.backgroundColor="white";
+    }
+
+    /* 다크 모드 버튼을 눌렀을 때, 실행될 기능 작성하기*/
+    function darkMode() {
+        바디.style.color="white"; // 글자색을 흰색으로 변경
+
+        // style 태그 안의 배경색을 변경하는 backgroundcolor 설정
+        바디.style.backgroundColor="black";
+    }
+    
+    </script>
+  </body>
+</html>
