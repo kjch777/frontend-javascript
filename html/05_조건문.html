@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>조건문</title>
+  </head>
+  <body>
+    <h1>조건문</h1>
+    <pre>
+        프로그래밍 코드가 해석되는 순서를 제어하는 제어문의 한 종류로,
+        작성된 조건식에 따라 수행되는 코드를 변경하는 구문이다. 
+    </pre>
+
+    <hr />
+
+    <h3>if(만약) 문</h3>
+    <pre>
+        <code>
+            if (조건식) {
+                조건식이 true 일 경우 실행 할 코드;
+            }
+        </code>
+        *조건식: 결과가 true, false 인 식으로만 작성해 주어야 한다. 
+    </pre>
+    <input type="number" id="input1" />
+    <button onclick="check1()">양수인지 확인하기</button>
+    <script>
+      /* if 문을 사용하여 양수인지 확인하기*/
+      const input1 = document.getElementById("input1");
+      //                     .getElementById(여기에 " ", ' ' 상관없이 표기를 해 주기만 하면 된다.);
+
+      function check1() {
+        const 입력받은값 = input1.value;
+
+        // 만약, input 에서 입력받은 값이 0 보다 커서 true 가 되면 양수
+        if (입력받은값 > 0) {
+          alert("양수입니다."); // alert(여기에 " ", ' ' 상관없이 표기를 해 주기만 하면 된다.);
+        }
+
+        // 만약, input 에서 입력받은 값이 0 과 같거나 작아서 true 가 되면 양수가 아님
+        if (입력받은값 <= 0) {
+          alert("양수가 아닙니다.");
+        }
+      }
+    </script>
+
+    <hr />
+    <h3>if - else 문</h3>
+    <pre>
+        <code>
+            if (조건식) {
+                조건식이 true 일 경우 수행할 코드 작성;
+            } else {
+                조건식이 false 일 경우 수행할 코드 작성;
+            }
+        </code>
+        *else 는 조건식을 작성하는 ( ) 가 없다. 
+    </pre>
+    <h5>0 ~ 100 사이의 랜덤한 숫자를 발생시켜, 홀/짝 판별하기</h5>
+    <button onclick="check2()">확인하기</button>
+    <script>
+      function check2() {
+        /* 랜덤 숫자 ▶ 난수: 정의된 범위 내에서 무작위로 추출된 수를 의미한다.
+
+        // 자바에서 Random() Math.random() 을 사용했던 것처럼,
+        // 자바스크립트에서도 Math.random() 을 사용한다.
+
+        Math.floor(): 내린다. 주어진 정수와 같거나 작은 정수 중에서 가장 큰 수를 반환한다.
+         Math.ceil(): 올린다. 주어진 정수와 같거나 큰 정수 중에서 가장 작은 수를 반환한다.
+        Math.round(): 반올림. 입력한 값과 가장 가까운 정수를 반환한다.
+
+        random 으로 나온 실수를 정수로 반환하고 싶다면, 위 3가지 중 넣고 싶은 값의 괄호 ( ) 안에
+        Math.random() 을 넣어주면 된다.
+
+        */
+        const 랜덤숫자 = Math.floor(Math.random() * 101); // 0 ~ 100 까지 101 개의 숫자 중 하나를 랜덤으로 추출한다.
+
+        // 만약, 홀수일 경우, 숫자 % 2 != 0
+        if (랜덤숫자 % 2 != 0) {
+          alert(랜덤숫자 + "은/는 홀수입니다.");
+        } else {
+          alert(랜덤숫자 + "은/는 짝수입니다.");
+        }
+      }
+    </script>
+
+    <h3>if(만약) - else if(아니라면 만약) - else(모두 아니라면)</h3>
+    <pre>
+      <code>
+        if(조건식1) {
+          조건식1 이 true 인 경우 실행할 코드 작성;
+        } else if(조건식2) {
+          조건식1 이 false 이고, 조건식2 가 true 일 경우 실행할 코드 작성;
+        } else {
+          조건식1, 조건식2 가 모두 false 일 경우 실행할 코드 작성;
+        }
+      </code>
+    </pre>
+
+    <h5>어린이, 청소년, 성인 구분하기</h5>
+    <pre>
+      나이를 입력 받아 
+      0 ~ 13세: 어린이
+      14 ~ 19세: 청소년
+      20 ~ n세: 성인
+    </pre>
+
+    나이: &nbsp; <input type="number" id="age" /> <br /><br />
+
+    <button onclick="check3()">확인하기</button>
+
+    <script>
+      // 입력한 나이 값 가져오기
+
+      function check3() {
+        // const 는 function 안에 넣어 주어야 제대로 작동한다.
+        const 입력받은나이 = document.getElementById("age").value;
+        // const 를 2번 쓸 필요없이, 바로 .value; 를 붙여 써도 된다.
+
+        let 메시지;
+
+        if (입력받은나이 >= 0 && 입력받은나이 <= 13) {
+          // 만약, 입력 받은 나이가 0 과 같거나 0 보다 크면서, 13 과 같거나 13 보다 작을 때
+          메시지 = "어린이";
+        } else if (입력받은나이 >= 14 && 입력받은나이 <= 19) {
+          메시지 = "청소년";
+        } else if (입력받은나이 >= 20) {
+          메시지 = "성인";
+        } else {
+          메시지 = "잘못된 입력입니다.";
+        }
+        console.log("키보드로 입력받은 나이는 " + 입력받은나이 + " 입니다.");
+        alert(메시지);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="utf-8" />
+    <title>회원가입</title>
+  </head>
+  <body>
+    이름: &nbsp; <input type="text" id="userName" required /> <br /><br />
+    이메일: &nbsp; <input type="email" id="userEmail" required /> <br /><br />
+    비밀번호: &nbsp; <input type="password" id="userPW" required /> <br /><br />
+    비밀번호 확인: &nbsp;
+    <input type="password" id="userPW_confirm" required /> <br /><br />
+
+    <button onclick="이름확인()">이름 확인</button>
+    &nbsp;&nbsp;
+    <button onclick="이메일확인()">이메일 확인</button>
+    &nbsp;&nbsp;
+    <button onclick="비밀번호확인()">비밀번호 확인</button>
+    &nbsp;&nbsp;
+    <button onclick="회원가입()">회원가입</button>
+
+    <script>
+      const nameCheck = document.getElementById("userName");
+      const emailCheck = document.getElementById("userEmail");
+      const pwCheck1 = document.getElementById("userPW");
+      const pwCheck2 = document.getElementById("userPW_confirm");
+
+      function 이름확인() {
+        const nameCheck1 = nameCheck.value;
+        if (nameCheck1 == "동그라미") {
+          alert("이름이 일치합니다.");
+        } else {
+          alert("이름이 일치하지 않습니다.");
+        }
+      }
+
+      function 이메일확인() {
+        const emailCheck1 = emailCheck.value;
+        if (emailCheck1 == "kh@kh.kh") {
+          alert("이메일이 일치합니다.");
+        } else {
+          alert("이메일이 일치하지 않습니다.");
+        }
+      }
+
+      function 비밀번호확인() {
+        const pwCheck11 = pwCheck1.value;
+        const pwCheck22 = pwCheck2.value;
+        if (pwCheck11 == pwCheck22) {
+          alert("비밀번호가 서로 일치합니다.");
+        } else {
+          alert("비밀번호가 서로 일치하지 않습니다.");
+        }
+      }
+
+      function 회원가입() {
+        const nameCheck1 = nameCheck.value;
+        const emailCheck1 = emailCheck.value;
+        const pwCheck11 = pwCheck1.value;
+        if (nameCheck1 == "동그라미" && emailCheck1 == "kh@kh.kh" && pwCheck11 == 'kh123') {
+          alert("회원가입이 완료되었습니다.");
+        } else {
+          alert("회원정보가 일치하지 않으므로 회원가입이 불가합니다.");
+        }
+      }
+    </script>
+  </body>
+</html>
