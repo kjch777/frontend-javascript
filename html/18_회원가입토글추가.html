@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="utf-8" />
+    <title>토글을추가한회원가입창만들기</title>
+    <style>
+      .추가토글박스 {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>회원가입</h1>
+
+    <label> 이름:&nbsp;<input type="text" id="userName" required /> </label>
+    <br /><br />
+
+    <label> 이메일:&nbsp;<input type="email" id="userEmail" required /> </label>
+    <br /><br />
+
+    <label>
+      비밀번호:&nbsp;<input type="password" id="userPw" required />
+    </label>
+    <br /><br />
+
+    <label>
+      비밀번호 확인:&nbsp;<input type="password" id="userPwConfirm" required />
+    </label>
+    <br /><br />
+
+    <button type="button" onclick="이름확인()">이름 확인</button>
+    &nbsp;&nbsp;
+    <button type="button" onclick="이메일확인()">이메일 확인</button>
+    &nbsp;&nbsp;
+    <button type="button" onclick="비번확인()">비밀번호 확인</button>
+    &nbsp;&nbsp;
+    <button type="submit" onclick="회원가입()">회원가입</button>
+    &nbsp;&nbsp;
+    <button type="button" onclick="약관작동()">이용약관</button>
+
+    <div id="toggleBox">이용약관 내용</div>
+
+    <script>
+      const nameCheck = document.getElementById("userName");
+      const emailCheck = document.getElementById("userEmail");
+      const pwCheck1 = document.getElementById("userPw");
+      const pwCheck2 = document.getElementById("userPwConfirm");
+
+      function 이름확인() {
+        const 이름체크 = nameCheck.value;
+        if (이름체크 == "신짱구") {
+          alert("이름이 일치합니다.");
+        } else {
+          alert("이름이 일치하지 않습니다.");
+        }
+      }
+
+      function 이메일확인() {
+        const 이메일체크 = emailCheck.value;
+        if (이메일체크 == "kh@kh.kh") {
+          alert("이메일이 일치합니다.");
+        } else {
+          alert("이메일이 일치하지 않습니다.");
+        }
+      }
+
+      function 비번확인() {
+        const 비번체크1 = pwCheck1.value;
+        const 비번체크2 = pwCheck2.value;
+        if (비번체크1 == 비번체크2) {
+          alert("비밀번호가 일치합니다.");
+        } else {
+          alert("비밀번호가 서로 다릅니다.");
+        }
+      }
+
+      function 회원가입() {
+        const 이름체크 = nameCheck.value;
+        const 이메일체크 = emailCheck.value;
+        const 비번체크1 = pwCheck1.value;
+        const 비번체크2 = pwCheck2.value;
+        if (
+          이름체크 == "신짱구" &&
+          이메일체크 == "kh@kh.kh" &&
+          비번체크1 == 비번체크2
+        ) {
+          alert("회원가입이 완료되었습니다.");
+        } else {
+          alert("회원가입이 불가합니다.");
+        }
+      }
+
+      function 약관작동() {
+        const 토글박스 = document.getElementById("toggleBox");
+        if (토글박스.classList.contains("추가토글박스")) {
+          토글박스.classList.remove("추가토글박스");
+        } else {
+          토글박스.classList.add("추가토글박스");
+        }
+      }
+    </script>
+  </body>
+</html>

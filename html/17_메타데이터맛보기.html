@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="utf-8" />
+    <title>성격유형</title>
+  </head>
+
+  <body>
+    <div id="시작">
+      <h1>성격 유형 검사</h1>
+      <button type="button" onclick="시작()">테스트 시작하기</button>
+    </div>
+
+    <div class="질문">
+      <h2>문제</h2>
+
+      <!-- button 은 기본값이 submit 이므로, 여기서는 type 을 button 으로 변경할 것-->
+      <button type="button" id="A">컨텐츠 선택하기</button>
+      &nbsp;
+      <button type="button" id="B">컨텐츠 선택하기</button>
+    </div>
+
+    <div id="결과">
+      <h2 id="동물">동물 종류</h2>
+      <h3 id="설명">설명</h3>
+    </div>
+
+    <input type="hidden" id="EI" value="0" />
+
+    <script>
+      // JQuery
+      // 메타데이터
+      const 선택값 = {
+        "1번선택": { 제목: "문제1번", 타입: "EI", A: "E", B: "I" },
+        "2번선택": { 제목: "문제2번", 타입: "NS", A: "N", B: "S" },
+        "3번선택": { 제목: "문제3번", 타입: "FT", A: "F", B: "T" },
+        "4번선택": { 제목: "문제4번", 타입: "PJ", A: "P", B: "J" },
+      };
+    </script>
+  </body>
+</html>

@@ -17,7 +17,29 @@
         <!-- 추후 메뉴 추가하기를 진행했을 때, 추가될 것-->
       </ul>
     </div>
+
+    <style>
+      button {
+        padding: 10px 20px;
+        background-color: rgb(13, 57, 71);
+        color: rgb(230, 241, 241);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      /* 버튼 위에 마우스 커서를 올렸을 때, 색상 변경되게 만들기*/
+      button:hover {
+        background-color: lightcoral;
+      }
+
+      ul {
+        list-style: none;
+      }
+    </style>
+
     <button onclick="selectMenu()">메뉴 선택하기</button>
+    &nbsp;&nbsp;
     <button onclick="addMenu()">메뉴 추가하기</button>
 
     <script>
@@ -29,13 +51,14 @@
         const 새로운메뉴 = prompt("새로운 메뉴를 입력해주세요: ");
 
         // 만약, 새로운 메뉴를 입력하고 확인을 눌렀다면
-        if (새로운메뉴) { // 확인을 누르면 true
-          
+        if (새로운메뉴) {
+          // 확인을 누르면 true
+
           // li 태그 추가하기
-          const newItem = document.createElement('li');
+          const newItem = document.createElement("li");
 
           // 이미 만들어 둔 li 태그 내부에, 프롬프트를 이용하여 추가할 내용을 적은 것
-          newItem.textContent = 새로운메뉴; 
+          newItem.textContent = 새로운메뉴;
 
           // 화면에 보이게 추가한 것
           menuList.appendChild(newItem);
@@ -46,12 +69,14 @@
       createElement: 태그 생성하기. 닫는 태그 표기는 따로 해주지 않아도 된다. 
                      예를 들어, div 태그를 생성하고 싶다면 ▼
                      document.createElement("div"); 라고 작성해 주면 된다.
+                     소괄호 ( ) 안에 " " 또는 ' ' 를 작성해 주어야 한다.
       
       appendChild: 실제로 화면에 보이도록, 부모 태그에 새로 만든 자식 태그를 추가해 준 것이다. 
                    menuList.appendChild(newItem); 을, id값 제거하고 작성해 보기 ▼
                                                             ul.appendChild(li);
                                                             menuList: ul 태그 값
                                                             newItem: 새로 추가되는 li 태그 값
+                   소괄호 ( ) 안에 " " 와 ' ' 가 없어야 한다.
       */
 
       // 메뉴 선택 기능 만들기
