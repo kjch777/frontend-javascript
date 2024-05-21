@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="utf-8" />
+    <title>글자 변경 해보기</title>
+  </head>
+  <body>
+    <!-- 무조건 p 태그여야 하는 것이 아니라,
+         h pre div 등 원하는 태그로 작성 가능하다.
+         단, head body 등은 안 된다.-->
+    <p id="text">클릭해서 환영인사로 변경하세요.</p>
+    <button onclick="textChange()">Click me</button>
+  </body>
+  <script>
+    // 자바에서는 public void 메서드명() { }
+    // 자바스크립트에서는 function 기능명() { }
+
+    function textChange() {
+        const textSelect = document.getElementById('text').innerText = 'Hello, World.'; 
+        // .getElementById('id 를 가져와야 한다.');
+        //                                                .inner: 내부, 내면의 라는 뜻
+        //                                                .innerText: 태그 내부에 있는 글자들
+        // .innerText = '바꿀 문자열'; 형식으로 작성하면 된다.
+    }
+  </script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="utf-8" />
+    <title>프롬프트</title>
+  </head>
+  <body>
+    <h1>프롬프트</h1>
+    <pre>
+        prompt(내용): 문자열을 작성할 수 있는 알림창이다. 
+         - 확인 버튼을 클릭할 경우: 입력한 내용 전달
+         - 취소 버튼을 클릭할 경우: null 값 전달 <!-- 전달을 못 한다.-->
+    </pre>
+
+    <button onclick="alertButton()">알러트버튼</button> <!-- onclick="기능명()" 형식으로 괄호 ( ) 를 반드시 작성해 주어야 한다.-->
+    <button onclick="promptButton()">프롬프트버튼</button>
+    
+    <script> // 스크립트 태그는 헤드 내부, 바디 내부, 바디 바깥 어디든 작성할 수 있다.
+      function alertButton() {
+        alert("알러트 입니다.");
+      }
+
+      function promptButton() {
+        prompt("프롬프트 입니다.");
+      }
+    </script>
+  </body>
+</html>
