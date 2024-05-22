@@ -3,33 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>토글 toggle</title>
-    <style>
-      #토글박스 {
-        width: 200px;
-        height: 200px;
-        background-color: rgb(213, 226, 236);
-        border: 2px solid rgb(94, 21, 32);
-        text-align: center;
-        line-height: 200px;
-      }
-
-      button {
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        margin: 10px;
-        background-color: rgb(209, 195, 195);
-      }
-
-      button:hover {
-        background-color: rgb(209, 163, 102);
-        color: rgb(66, 8, 8);
-      }
-
-      .추가클래스 {
-        font-weight: bold;
-      }
-    </style>
+    <link rel="stylesheet" href="../css/18_토글.css">
   </head>
   <body>
     <h1>박스 보여주기/숨기기</h1>
@@ -37,19 +11,6 @@
     <!-- 보통 button 을 사용하지 않고, 한 번에 끝낼 때에는 이런 형식으로 사용한다.-->
     <div id="토글박스">글자보여주기</div>
 
-    <script>
-      function 보여주기숨기기() {
-        const 박스 = document.getElementById("토글박스");
-
-        // 클래스 목록에 추가클래스 라는 클래스가 포함되어 있는지 확인
-        if (박스.classList.contains("추가클래스")) {
-          // 만약, 존재한다면
-          박스.classList.remove("추가클래스"); // 추가클래스 지우기
-        } else {
-          // 만약, 존재하지 않는다면
-          박스.classList.add("추가클래스"); // 추가클래스 추가하기
-        }
-      }
-    </script>
+    <script src="../js/18_토글.js"></script>
   </body>
 </html>

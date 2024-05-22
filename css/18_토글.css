@@ -1,0 +1,25 @@
+#토글박스 {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(213, 226, 236);
+  border: 2px solid rgb(94, 21, 32);
+  text-align: center;
+  line-height: 200px;
+}
+
+button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: rgb(209, 195, 195);
+}
+
+button:hover {
+  background-color: rgb(209, 163, 102);
+  color: rgb(66, 8, 8);
+}
+
+.추가클래스 {
+  font-weight: bold;
+}
