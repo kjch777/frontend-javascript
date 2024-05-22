@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>$</title>
+  </head>
+
+  <body>
+    <h1>$</h1>
+    <pre>
+        $ 기호는 주로 jQuery 에서 사용된다. 
+        HTML 문서를 탐색하고 조작할 때 사용한다. 
+
+        jQuery 에서 $ 기호를 사용하지 않을 때
+            키보드에서 ! 왼쪽에 있는 `(백틱) 안에서 사용될 때는
+            문자열 안에 변수나 표현식을 삽입할 수 있다. 
+
+        사용 방법
+            `(백틱) ${변수이름} `(백틱)
+    </pre>
+    <button type="button" onclick="알림창띄우기()">버튼</button>
+
+    <script>
+      function 알림창띄우기() {
+        // 변수 선언
+        const num = 10;
+        const str = "양수";
+
+        // $ 를 사용하여 메시지 생성하기
+        const msg = `${num} 은/는 ${str} 입니다. ^^`;
+
+        /*
+        ${변수명} 을 작성 후, 맨 앞/뒤 에 `(백틱) 이 아닌,
+        " " 나 ' ' 를 사용하면, 단순한 문자열로 취급되기 때문에
+        ${변수명} 을 작성한 의미가 없다. 
+        */
+
+        alert(msg);
+      }
+    </script>
+  </body>
+</html>
