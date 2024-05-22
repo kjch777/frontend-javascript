@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="utf-8" />
+    <title>채팅 봇</title>
+    <style>
+      #chat-container {
+        width: 300px;
+        height: 400px;
+        border: 2px solid #575757;
+        display: flex;
+
+        /* div 내부에서 가운데로 정렬하기*/
+        justify-content: center;
+
+        /* 
+          div 내부에서 오른쪽 끝으로 정렬하기
+          justify-content: space-between;
+        */
+
+        /* div 내부에서 맨 밑으로 내리기*/
+        flex-direction: column;
+      }
+
+      #chat-box {
+        flex: 1;
+        padding: 10px;
+        border-bottom: 2px solid #575757;
+
+        /* overflow-y 는, 세로(상하) 를 기준으로 내용이 칸보다 많을 때 어떻게 보여줄지 선택하는 속성이다.*/
+        /* overflow-x 는, 가로(좌우) 를 기준으로 내용이 칸보다 많을 때 어떻게 보여줄지 선택하는 속성이다.*/
+        overflow-y: auto;
+      }
+
+      .message {
+        padding: 5px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
+
+      .user-message {
+        background-color: lightblue;
+        /*
+        align-self 는, 해당하는 태그 내부에 있는 태그들의 정렬 상태를 설정할 때 사용한다.
+        flex-end 는, 태그를 끝 부분(아래쪽 또는 오른쪽) 으로 정렬하고 싶을 때 사용한다.
+        */
+        align-self: flex-end;
+      }
+
+      .bot-message {
+        background-color: lightpink;
+        /*
+        align-self 는, 해당하는 태그 내부에 있는 태그들의 정렬 상태를 설정할 때 사용한다.
+
+        flex 태그의 축을 기준으로 정렬을 설정할 수 있다.
+        flex-start 는, 태그를 시작 부분(위쪽 또는 왼쪽) 으로 정렬하고 싶을 때 사용한다.
+          ▶ flex-end 로 끝나는 태그 밑에 첫번째로 텍스트를 넣어주겠다 는 의미의 코드이다.
+        */
+        align-self: flex-start;
+      }
+
+      #input-box {
+        display: flex;
+      }
+
+      #input-box input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-top: 2px solid #575757;
+      }
+
+      button {
+        padding: 10px;
+        border: none;
+        background-color: rgb(173, 173, 173);
+        color: rgb(236, 236, 236);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>채팅 프로그램</h1>
+    <div id="chat-container">
+      <div id="chat-box"></div>
+      <div id="input-box">
+        <input type="text" id="user-input" placeholder="메시지를 입력하세요." />
+        <button onclick="sendMessage()">전송하기</button>
+      </div>
+    </div>
+
+    <script>
+      function sendMessage() {
+        const inputbox = document.getElementById("user-input");
+        const message = inputbox.value.trim(); // .trim() 은 공백 제거
+
+        // 만약, 메시지가 공백일 경우 전송할 수 없게 만들고 싶다면
+        if(message == "") return; // return; 을 추가하여, 아래 코드로 더 갈 수 없게 끝내버린 것
+        // 자바스크립트에서는 코드가 한 줄일 경우, 중괄호 { } 를 작성해 주지 않아도 된다.
+
+        메시지보여주기(message, "user");
+        inputbox.value = ""; // input 값에 새로운 값으로 " " 을 넣어, 메시지 내용을 초기화한 것
+
+        // 채팅봇 띄우기
+        setTimeout(() => {
+          메시지보여주기("저는 채팅봇입니다.", "bot");
+        }, 1000); // 1초 뒤에 메시지 보여주기
+      }
+
+      function 메시지보여주기(message, sender) {
+        const chatbox = document.getElementById("chat-box");
+        const messageElement = document.createElement("div");
+
+        //                         div 클래스 이름
+        //                            message
+        //                                  user 또는 bot
+        //                                                -message
+        messageElement.classList.add("message", sender + "-message");
+        messageElement.textContent = message; // 메시지 보여주기
+        chatbox.appendChild(messageElement); // 보낸 내용 추가하기
+      }
+    </script>
+  </body>
+</html>
