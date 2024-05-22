@@ -12,10 +12,13 @@
 
     <h1>onPress == Enter 키</h1>
     <p>
-      input 이나 textarea 에 값을 입력한 다음 Enter 키를 누르면, 버튼을 마우스로
+      input 이나 textarea 에 값을 입력한 다음, 키보드에서(한글을 제외한) 모든 키를 누르면, 버튼을 마우스로
       클릭하지 않아도 클릭한 것처럼 작동한다.
+
+      onkeypress 는 오류가 많이 발생하기 때문에, 권장하지는 않는다. 
+      onkeydown 을 사용하는 것을 권장한다. 
     </p>
-    <input type="text" onkeypress="엔터기능()" />
+    <input type="text" onkeypress="엔터기능(event)" />
   </body>
 
   <script src="../js/23_onKey-onPress.js"></script>

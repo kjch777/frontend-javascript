@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="utf-8" />
+    <title>비밀번호 유효성 검사</title>
+    <style>
+      .check {
+        color: green;
+      }
+
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>비밀번호 유효성 검사</h2>
+    <form action="#" name="pwForm">
+      <h3>비밀번호</h3>
+      <input type="text" class="pw-input" id="inputPW" name="user_pw" />
+      <br />
+      <span class="input-result">영어, 숫자로만 8 ~ 20 글자 안으로</span>
+    </form>
+
+    <script>
+      const checkList = {
+        inputPW: false,
+      };
+
+      const inputPW = document.querySelector("#inputPW");
+
+      inputPW.addEventListener("input", (e) => {
+        const value = e.target.value;
+        const span = e.target.nextElementSibling.nextElementSibling;
+
+        if (value.trim().length == 0) {
+          span.textContent = "영어, 숫자로만 8 ~ 20 글자 안으로";
+
+          span.classList.remove("check", "error");
+          e.target.value = "";
+
+          checkList["inputPW"] = false;
+          return;
+        }
+
+        const regExp = /^[A-Za-z0-9]{8,20}$/;
+
+        if (regExp.test(value)) {
+          span.textContent = "유효한 형식의 비밀번호입니다.";
+          span.classList.add("check");
+          span.classList.remove("error");
+          checkList["inputPW"] = true;
+        } else {
+          span.textContent = "유효하지 않은 형식의 비밀번호입니다.";
+          span.classList.add("error");
+          span.classList.remove("check");
+          checkList["inputPW"] = false;
+        }
+      });
+    </script>
+  </body>
+</html>
