@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>비밀번호와 비밀번호 확인 일치여부 체크하기</title>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#pwCheck").on("input", function () {
+          // 비밀번호 값 가져오기
+          const pw = $("#pw").val();
+
+          // 비밀번호 확인 값 가져오기
+          const pwCheck = $(this).val(); // 여기서 this 는 "#pwCheck" 와 같다.
+
+          // 비밀번호 일치 여부 확인하기
+          if (pw === pwCheck) {
+            $("#msg").text("비밀번호가 일치합니다.").css("color", "green");
+          } else {
+            $("#msg").text("비밀번호가 일치하지 않습니다.").css("color", "red");
+          }
+        });
+        
+        $("#pw").on("input", function () {
+          const 비밀번호 = $(this).val();
+          const 정규식 = /^[a-z]{8,}$/; // 알파벳 소문자 8자리 이상만 비밀번호 형식이 올바르다고 출력되게
+
+          // 만약, 비밀번호가 정규식에 적합한지 테스트했을 때, 적합하다면
+          if (정규식.test(비밀번호)) {
+            $("#정규식메시지")
+              .text("비밀번호 형식이 올바릅니다.")
+              .css("color", "green");
+          } else {
+            $("#정규식메시지")
+              .text("비밀번호는 최소 8자 이상, 소문자만 입력해 주세요.")
+              .css("color", "red");
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <label>비밀번호: </label>
+    <input type="password" id="pw" required /> <br />
+
+    <p id="정규식메시지"></p>
+
+    <label>비밀번호 확인: </label>
+    <input type="password" id="pwCheck" required /> <br />
+    
+    <p id="msg"></p>
+  </body>
+</html>

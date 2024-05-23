@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>실시간으로 입력받기</title>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#inputField").on("input", function () {
+          $("#텍스트보여주기").text($(this).val()); // $("#id이름") 형식으로, id이름을 가져올 땐 반드시 앞에 #을 붙여주어야 한다.
+          //                              val 은 value 의 약자로, 값을 뜻한다.
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <input type="text" id="inputField" placeholder="텍스트를 입력하세요." />
+    <p>입력한 텍스트: <span id="텍스트보여주기"></span></p>
+  </body>
+</html>
