@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="utf-8" />
+    <title>검색하기</title>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#serchBox").keyup(function () {
+          const serchBox = $(this).val(); // input 창에서 검색한 내용 가져오기
+          $("li").each(function () {
+            // 자바의 for - each 문 처럼, 이게 자바스크립트에서의 반복문이다.
+            var 텍스트 = $(this).text();
+
+            // .indexOf() 는, 배열에서 특정 태그의 자리 값을 찾을 때 사용한다.
+            // index 는 0 부터 시작한다.
+            // -1 은 없는 값이기 때문에, -1 일 때는 숨기기 처리를 한 것이다.
+            if (텍스트.indexOf(serchBox) === -1) {
+              $(this).hide();
+            } else {
+              $(this).show();
+            }
+          });
+        });
+      });
+    </script>
+
+    <style>
+      .container {
+        width: 500px;
+        margin: 25px auto;
+        padding: 25px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px gray;
+      }
+
+      #serchBox {
+        width: 100%;
+        padding: 10px;
+        font-size: 15px;
+        border: 1px solid grey;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        padding: 5px;
+        border-bottom: 1px solid gray;
+        background-color: white;
+      }
+
+      body {
+        background-color: aliceblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <input type="text" id="serchBox" placeholder="메뉴를 검색하세요." />
+      <ul id="menuList">
+        <li>햄버거</li>
+        <!-- ctrl + d 를 누르면 드래그된다.-->
+        <li>피자</li>
+        <li>치킨</li>
+        <li>샌드위치</li>
+        <li>토스트</li>
+        <li>샐러드</li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="utf-8" />
+    <title>옷 검색하기</title>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#serchBox").keyup(function () {
+          const serchBox = $(this).val();
+          var serchResult = false;
+          $("li").each(function () {
+            var 텍스트 = $(this).text();
+            if (텍스트.indexOf(serchBox) === -1) {
+              $(this).hide();
+            } else {
+              $(this).show();
+              serchResult = true;
+            }
+          });
+
+          // 만약, 검색한 결과가 있으면 검색 결과가 없습니다. 를 숨기고,
+          if (serchResult) {
+            $("#serchResult").hide();
+          } else {
+            // 검색한 결과가 없으면 보여주기
+            $("#serchResult").show();
+          }
+        });
+      });
+    </script>
+
+    <style>
+      .container {
+        width: 500px;
+        margin: 25px auto;
+        padding: 25px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px gray;
+      }
+
+      #serchBox {
+        width: 100%;
+        padding: 10px;
+        font-size: 15px;
+        border: 1px solid grey;
+        border-radius: 5px;
+        margin-bottom: 15px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        padding: 5px;
+        border-bottom: 1px solid gray;
+        background-color: white;
+      }
+
+      body {
+        background-color: aliceblue;
+      }
+
+      #serchResult {
+        display: none; /* 맨 처음 기본값으로 검색 결과가 없습니다. 를 숨겨놓기*/
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>옷 가게</h1>
+    <div class="container">
+      <input
+        type="text"
+        id="serchBox"
+        placeholder="찾고 싶은 옷을 입력하세요."
+      />
+      <ul id="list">
+        <li>청바지</li>
+        <!-- ctrl + shift + 화살표-->
+        <li>셔츠</li>
+        <!-- shift + delete 를 누르면, 한 줄을 전부 삭제할 수 있다.-->
+        <li>니트</li>
+        <li>슬랙스</li>
+        <li>하와이안 슬랙스</li>
+        <li>반바지</li>
+        <li>7부 반바지</li>
+        <li>긴 팔 니트</li>
+        <li>점프 수트</li>
+        <li>원피스</li>
+      </ul>
+      <p id="serchResult">검색 결과가 없습니다.</p>
+    </div>
+  </body>
+</html>
