@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>이미지 토글</title>
+    
+    <script
+      type="text/javascript"
+      src="http://code.jquery.com/jquery-3.7.1.js"
+    ></script>
+    
+    <style>
+      img {
+        width: 100px;
+        height: 250px;
+      }
+    </style>
+
+    <script>
+        function 이미지보여주기숨기기() {
+            $("#이미지").slideToggle("fast");
+        }
+    </script>
+  </head>
+
+  <body>
+    <button id="토글이미지버튼" onclick="이미지보여주기숨기기()">
+      이미지 버튼
+    </button>
+
+    <br /><br />
+
+    <img src="healing.jpg" id="이미지" />
+  </body>
+</html>

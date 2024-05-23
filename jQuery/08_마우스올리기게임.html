@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="utf-8" />
+    <title>마우스 올리기 게임</title>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".box").on("mouseenter", function () { // "mouseenter" 는 예약어이다. 지정되어 있는 기능의 이름이다.
+          $(this).css("background-color", get랜덤색상()); // this 가 .box 이다.
+        });
+      });
+
+      function get랜덤색상() {
+        // 노란색 코드는 괄호가 붙어야 하는 것 같다.
+        const 색상코드 = "0123456789ABCDEF"; // 총 16자리
+        let 색상 = "#"; // # 을 맨 앞에 고정시킨 다음, 뒤에 색상 코드 추가하기
+        // const 는 값이 변하지 않지만, let 은 값이 변할 수 있다.
+
+        for (let i = 0; i < 6; i++) {
+          색상 += 색상코드[Math.floor(Math.random() * 16)];
+          // .ceil(); 은 올림  .floor(); 는 버림 .round(); 는 반올림
+        }
+        return 색상; // 완성된 색상 코드를 반환
+      }
+    </script>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 10px;
+            display: inline-block;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </body>
+</html>

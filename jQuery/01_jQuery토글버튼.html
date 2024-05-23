@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <!-- meta title style link script 등의, 실제로 화면에 보이지는 않지만, 여러가지 필요한 설정들을 해주는 공간이다.-->
+    <meta charset="utf-8" />
+    <title>jQuery 개요</title>
+    <script
+      type="text/javascript"
+      src="http://code.jquery.com/jquery-3.7.1.js"
+    ></script>
+    <script>
+      // jQuery 는 script 를 head 안에 써주어도 동작한다.
+      // jQuery 는 $() 를 표기해 주어야 한다.
+      $(document).ready(function () {
+        $("#토글버튼").click(function () {
+          // 토글 버튼을 클릭하면,
+          $("h1").toggle("fast"); // h1 에 천천히 보여주기/숨기기가 적용된다.
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <h1>토글 보여주기/숨기기</h1>
+    <button id="토글버튼">버튼</button>
+  </body>
+</html>

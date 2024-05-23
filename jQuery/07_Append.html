@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="utf-8" />
+    <title>항목 추가하기</title>
+    <script src="http://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+      function addItem() {
+
+        // .append(); 와 같은 기능 함수를 사용할 때, 내부 값이 길어지면
+        // " " 또는 ' ' 가 아니라, ` `(백틱) 을 사용하여 묶어줘야 한다. 
+        $("#list").append(`<li>이 편지는 ... 
+                               이 편지는 ... 
+                               이 편지는 ... 
+                               이 편지는 ... 
+                               이 편지는 ...</li>`);
+      }
+    </script>
+  </head>
+
+  <body>
+    <ul id="list">
+      <li>이 편지는 ...</li>
+      <li>이 편지는 ...</li>
+    </ul>
+    <button onclick="addItem()">항목 추가</button>
+  </body>
+</html>

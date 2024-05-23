@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>보여주기 숨기기</title>
+    <script
+      src="http://code.jquery.com/jquery-3.7.1.js"
+      type="text/javascript"
+    ></script>
+    <script>
+      function 보여주기() {
+        $("#텍스트").show();
+      }
+      function 숨기기() {
+        $("#텍스트").hide();
+      }
+    </script>
+  </head>
+  <body>
+    <p id="텍스트">이 텍스트 보여주기 숨기기</p>
+    <button onclick="보여주기()">보여주기</button> <!-- onclick="기능이름()" 형식으로,-->
+    <button onclick="숨기기()">숨기기</button>    <!-- 반드시 () 를 작성해 주어야 한다.-->
+  </body>
+</html>
