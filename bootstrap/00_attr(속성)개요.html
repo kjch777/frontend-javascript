@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="utf-8" />
+    <title>attr(속성) 개요</title>
+  </head>
+  <body>
+    <h1>attr</h1>
+    <pre>
+        attr 은 attribute 의 약자로, 속성이란 뜻이다. 
+        jQuery 에서, html 태그 속성을 가져오거나 설정할 때 사용하는 기능이다. 
+
+        예제
+            <img 태그>
+            <img src="이미지주소값가져오기"
+                 alt="이미지설명텍스트로작성" 
+                 style="이미지스타일설정;" 
+                 class="이미지클래스작성">
+
+            src, alt, style, class 모두 attr(속성) 에 해당한다. 
+            다시 말해, attr 은 태그 안에 작성된 속성 값을 가져오거나 변경하거나 제거할 때 사용한다. 
+            
+            1. 태그 안에 있는 속성 값 가져오기
+                $('img').attr('src'); // src 안에 있는 이미지 주소 값을 가져오는 것
+
+            2. 태그 안에 있는 속성 값 변경하기
+                $('img').attr('src', '변경할주소값작성'); // src 안에 있는 이미지 주소 값을 변경하는 것
+
+            3. 태그 안에 있는 속성 값 여러개를 한 번에 변경하기
+                $('img').attr( { src: '변경할주소값작성', alt: '변경할이미지설명' } );
+    </pre>
+  </body>
+</html>
