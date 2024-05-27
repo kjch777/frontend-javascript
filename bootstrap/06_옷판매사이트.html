@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="utf-8" />
+    <title>옷 판매 사이트</title>
+
+    <style>
+      .footer a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+        color: black;
+      }
+
+      .container .btn:hover {
+        background-color: lightblue;
+        color: darkblue;
+      }
+
+      footer {
+        background-color: #72ace7;
+        color: white;
+        /* position: relative; 자동 정렬? 가운데 정렬?*/
+      }
+
+      .navbar a {
+        color: white;
+      }
+
+      .card-img-top {
+        object-fit: cover;
+        height: 250px;
+      }
+    </style>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-info">
+      <div class="container-fluid">
+        <!-- 세로로 나열된 것들 전부를 가로로 한 줄 정렬시키는 코드-->
+        <a class="navbar-brand" href="#">Hermès</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="d-flex justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- ms-auto: margin start-auto. 모든 태그를 가능한 한 오른쪽으로 정렬한다. 왼쪽에 가능한 한 여백을 많이 준다. ?-->
+            <!-- me-auto: margin end-auto. 모든 태그를 가능한 한 왼쪽으로 정렬한다. 오른쪽에 가능한 한 여백을 많이 준다. ?-->
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                >Cart&nbsp;
+                <span class="badge bg-primary">0</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <div class="row">
+        <h2 class="mb-5">상품 목록</h2>
+      </div>
+
+      <div class="row">
+        <!-- 1 row 안에는 12 col 이 들어있다.-->
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <img src="옷이미지들/상의.png" class="card-img-top" />
+              <!-- card-body 바깥에 위치하면 이미지가 조금 짤린다.-->
+              <h5 class="card-title">상의</h5>
+              <p class="card-text">\</p>
+              <!-- \ 로만 작성해 두어도 원화 기호로 출력된다.-->
+              <a href="옷판매사이트.html" class="btn btn-dark">상세보기</a>
+              <a href="#" class="btn btn-success">장바구니에 추가</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <img src="옷이미지들/여름상의.png" class="card-img-top" />
+              <h5 class="card-title">여름 상의</h5>
+              <p class="card-text">\</p>
+              <a href="#" class="btn btn-dark">상세보기</a>
+              <a href="#" class="btn btn-success">장바구니에 추가</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <img src="옷이미지들/바지.png" class="card-img-top" />
+              <h5 class="card-title">바지</h5>
+              <p class="card-text">\</p>
+              <a href="#" class="btn btn-dark">상세보기</a>
+              <a href="#" class="btn btn-success">장바구니에 추가</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <img src="옷이미지들/긴바지.png" class="card-img-top" />
+              <h5 class="card-title">
+                <span><mark>5th reorder</mark></span> 긴 바지
+              </h5>
+              <p class="card-text">\</p>
+              <a href="#" class="btn btn-dark">상세보기</a>
+              <a href="#" class="btn btn-success">장바구니에 추가</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <img
+                src="옷이미지들/hermes-birkin-bag.jpg"
+                class="card-img-top"
+              />
+              <h5 class="card-title">버킨 백</h5>
+              <p class="card-text">$</p>
+              <a href="#" class="btn btn-dark">상세보기</a>
+              <a href="#" class="btn btn-success">장바구니에 추가</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <img src="옷이미지들/스카프.webp" class="card-img-top" />
+              <h5 class="card-title">스카프</h5>
+              <p class="card-text">$</p>
+              <a href="#" class="btn btn-dark">상세보기</a>
+              <a href="#" class="btn btn-success">장바구니에 추가</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer text-center mt-5">
+      <div class="container">
+        <p>&copy; Hermès All Rights Reserved.</p>
+        <p>
+          <a href="#">개인정보 처리방침</a>
+          |
+          <a href="#">이용약관</a>
+        </p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
