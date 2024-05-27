@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="utf-8" />
+    <title>window 내장 객체</title>
+  </head>
+
+  <body>
+    <h1>window 내장 객체</h1>
+    <pre>
+        - 인터넷 창 자체를 나타내는 것이다. 
+
+        - document 상위, document 의 부모 객체
+
+        - window 의 자식 객체
+            DOM(Document Object Model): document(문서)
+                브라우저(인터넷) 에서 실제 눈으로 볼 수 있는 화면
+
+            BOM(Browser Object Model): location history screen navigator 등
+                브라우저(인터넷) 에서 DOM 의 나머지 부분
+
+                location: 다른 페이지로 이동할 때 사용
+                     .reload(): 현재 페이지 새로고침
+                    .replace(): 다른 페이지로 이동
+                
+                history: 사용자가 방문한 페이지 기록을 관리한다. 
+                       .back(): 이전 페이지로 이동
+                    .forward(): 다음 페이지로 이동
+                         .go(): 특정 페이지로 이동 (음수면 이전 페이지 / 양수면 다음 페이지)
+
+                screen: 사용자 화면에 대한 정보를 알려준다.
+                     .width(): 화면의 가로 길이를 나타낸다. 
+                    .height(): 화면의 세로 길이를 나타낸다. 
+                
+                navigator: 화면에 대한 정보를 나타낸다. 브라우저의 종류나 버전, 운영체제 등을 나타낸다. 
+                    브라우저 종류: 크롬 웨일 엣지 파이어폭스 등
+                    브라우저 버전: 버전 정보
+                        운영체제: 윈도우 맥 리눅스 등
+    </pre>
+
+    <h3>alert, prompt, console, setInterval, clearInterval</h3>
+    <pre>
+                alert: window 에 저장된 알람 창이다. 
+
+               prompt: window 에 저장된 알람 창에서, 입력 가능한 input 기능이 들어있는 창이다. 
+
+              console: window 에 저장된, 사용자는 볼 수 없고 개발자만 볼 수 있는 표시 창이다.
+                  .log(): 일반적인 메시지 출력
+                 .info(): 정보 메시지 출력
+                 .warn(): 경고 메시지 출력, 주로 노란색으로 표시된다. 
+                .error(): 오류 메시지 출력, 주로 빨간색 배경으로 표시된다. 
+                .clear(): 콘솔에 표시된 모든 내용을 지울 수 있다. 
+
+          setInterval: 반복적인 기능을 설정할 수 있다. 
+
+        clearInterval: 설정한 타이머를 중지할 수 있고, 기록을 유지할지 초기화할지 설정할 수 있다. 
+    </pre>
+  </body>
+</html>
